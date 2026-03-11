@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/assets/fonts/MonaSans.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Pinterest-inspired: warm white backgrounds, red primary */
+    --background: 0.99 0.003 60;
+    --foreground: 0.15 0.01 20;
+
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.01 20;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.01 20;
+
+    /* Pinterest red */
+    --primary: 0.52 0.21 27;
+    --primary-foreground: 1 0 0;
+
+    --secondary: 0.96 0.005 60;
+    --secondary-foreground: 0.25 0.01 20;
+
+    --muted: 0.95 0.005 60;
+    --muted-foreground: 0.52 0.01 60;
+
+    --accent: 0.95 0.015 27;
+    --accent-foreground: 0.52 0.21 27;
+
+    --destructive: 0.52 0.21 27;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.91 0.006 60;
+    --input: 0.91 0.006 60;
+    --ring: 0.52 0.21 27;
+
+    --radius: 0.75rem;
+
+    --chart-1: 0.52 0.21 27;
+    --chart-2: 0.72 0.15 200;
+    --chart-3: 0.64 0.18 130;
+    --chart-4: 0.78 0.12 90;
+    --chart-5: 0.56 0.17 280;
+
+    --sidebar: 0.97 0.003 60;
+    --sidebar-foreground: 0.15 0.01 20;
+    --sidebar-primary: 0.52 0.21 27;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.95 0.015 27;
+    --sidebar-accent-foreground: 0.52 0.21 27;
+    --sidebar-border: 0.91 0.006 60;
+    --sidebar-ring: 0.52 0.21 27;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(var(--primary) / 0.6);
+}
